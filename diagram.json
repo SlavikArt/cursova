@@ -1,0 +1,334 @@
+{
+  "version": 1,
+  "author": "Slavik Art",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-arduino-uno",
+      "id": "uno",
+      "top": 0,
+      "left": 0,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": -80,
+      "left": 120,
+      "attrs": {
+        "color": "red",
+        "label": "LED 1"
+      }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led2",
+      "top": -80,
+      "left": 160,
+      "attrs": {
+        "color": "green",
+        "label": "LED 2"
+      }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led3",
+      "top": -80,
+      "left": 200,
+      "attrs": {
+        "color": "blue",
+        "label": "LED 3"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": -30,
+      "left": 120,
+      "rotate": 90,
+      "attrs": {
+        "value": "220"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r2",
+      "top": -30,
+      "left": 160,
+      "rotate": 90,
+      "attrs": {
+        "value": "220"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r3",
+      "top": -30,
+      "left": 200,
+      "rotate": 90,
+      "attrs": {
+        "value": "220"
+      }
+    },
+    {
+      "type": "wokwi-potentiometer",
+      "id": "pot1",
+      "top": 27.5,
+      "left": 307,
+      "attrs": {
+        "label": "Speed 1"
+      }
+    },
+    {
+      "type": "wokwi-potentiometer",
+      "id": "pot2",
+      "top": 27.5,
+      "left": 412.6,
+      "attrs": {
+        "label": "Speed 2"
+      }
+    },
+    {
+      "type": "wokwi-potentiometer",
+      "id": "pot3",
+      "top": 27.5,
+      "left": 518.2,
+      "attrs": {
+        "label": "Speed 3"
+      }
+    },
+    {
+      "type": "wokwi-lcd1602",
+      "id": "lcd1",
+      "top": -150,
+      "left": 300,
+      "attrs": {
+        "pins": "i2c"
+      }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": 217.4,
+      "left": 326.4,
+      "attrs": {
+        "color": "green",
+        "label": "Mode"
+      }
+    }
+  ],
+  "connections": [
+    [
+      "uno:GND.1",
+      "led1:C",
+      "black",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "uno:GND.1",
+      "led2:C",
+      "black",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "uno:GND.1",
+      "led3:C",
+      "black",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "uno:9",
+      "r1:1",
+      "green",
+      [
+        "v-40",
+        "h120"
+      ]
+    ],
+    [
+      "uno:10",
+      "r2:1",
+      "green",
+      [
+        "v-50",
+        "h160"
+      ]
+    ],
+    [
+      "uno:11",
+      "r3:1",
+      "green",
+      [
+        "v-60",
+        "h200"
+      ]
+    ],
+    [
+      "r1:2",
+      "led1:A",
+      "green",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "r2:2",
+      "led2:A",
+      "green",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "r3:2",
+      "led3:A",
+      "green",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "pot1:GND",
+      "uno:GND.2",
+      "black",
+      [
+        "h-20",
+        "v20"
+      ]
+    ],
+    [
+      "pot1:VCC",
+      "uno:5V",
+      "red",
+      [
+        "h-20",
+        "v30"
+      ]
+    ],
+    [
+      "pot1:SIG",
+      "uno:A0",
+      "orange",
+      [
+        "h-30",
+        "v40"
+      ]
+    ],
+    [
+      "pot2:GND",
+      "uno:GND.2",
+      "black",
+      [
+        "h-20",
+        "v20"
+      ]
+    ],
+    [
+      "pot2:VCC",
+      "uno:5V",
+      "red",
+      [
+        "h-20",
+        "v30"
+      ]
+    ],
+    [
+      "pot2:SIG",
+      "uno:A1",
+      "orange",
+      [
+        "h-30",
+        "v40"
+      ]
+    ],
+    [
+      "pot3:GND",
+      "uno:GND.2",
+      "black",
+      [
+        "h-20",
+        "v20"
+      ]
+    ],
+    [
+      "pot3:VCC",
+      "uno:5V",
+      "red",
+      [
+        "h-20",
+        "v30"
+      ]
+    ],
+    [
+      "pot3:SIG",
+      "uno:A2",
+      "orange",
+      [
+        "h-30",
+        "v40"
+      ]
+    ],
+    [
+      "lcd1:GND",
+      "uno:GND.3",
+      "black",
+      [
+        "h-20",
+        "v20"
+      ]
+    ],
+    [
+      "lcd1:VCC",
+      "uno:5V",
+      "red",
+      [
+        "h-20",
+        "v30"
+      ]
+    ],
+    [
+      "lcd1:SDA",
+      "uno:A4",
+      "blue",
+      [
+        "h-40",
+        "v50"
+      ]
+    ],
+    [
+      "lcd1:SCL",
+      "uno:A5",
+      "purple",
+      [
+        "h-50",
+        "v60"
+      ]
+    ],
+    [
+      "btn1:2.r",
+      "uno:GND.1",
+      "black",
+      [
+        "h9.8",
+        "v-230.2",
+        "h-287.7"
+      ]
+    ],
+    [
+      "btn1:1.r",
+      "uno:2",
+      "yellow",
+      [
+        "h0.2",
+        "v-221.4"
+      ]
+    ]
+  ],
+  "dependencies": {}
+}
